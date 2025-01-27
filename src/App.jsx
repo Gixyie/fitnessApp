@@ -2,7 +2,6 @@ import React from 'react'
 import "./App.css";
 import FitnessDashboard from './components/fitnessDashboard.JSX';
 
-
 function App() {
   const [currentPage, setCurrentPage] = React.useState("dashboard");
 

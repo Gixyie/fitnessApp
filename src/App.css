@@ -43,3 +43,5 @@ nav button:hover {
   border-radius: 10px;
   margin-bottom: 5px;
 }
+
+@import './styles/tailwind.css';

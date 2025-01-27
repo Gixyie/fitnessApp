@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "./FitnessDashboard.css";
-
+import Chart from "./Chart";
 
 const FitnessDashboard = () => {
     // Stato per il nome dell'utente
@@ -118,7 +118,7 @@ const FitnessDashboard = () => {
           </div>
         </div>
       )}
-
+       <Chart />
     </div>
   );
 };
