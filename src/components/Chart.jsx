@@ -80,29 +80,29 @@ const Chart = () => {
 
   return (
     <div>
-      <h3 style={{fontSize: "2rem", justifyContent:"center", alignContent:"center", alignItems:"center", display:"flex"}}>Workout Habits Chart</h3>
+      <h3 style={{fontSize: "2rem", fontWeight: "bold", justifyContent:"center", alignContent:"center", alignItems:"center", display:"flex", letterSpacing: "2px"}}>WORKOUT HABITS CHART</h3>
       {/* Grafico */}
       <Line data={data} options={options} />
       {/* Campi di input e pulsanti */}
-      <div style={{ marginTop: "20px" }}>
+      <div style={{ marginTop: "20px", justifyContent: "center", display:"flex" }}>
         <input
           type="text"
-          placeholder="Nuova etichetta (es: Gio)"
+          placeholder="Giorno (es.gio)"
           value={newLabel}
           onChange={(e) => setNewLabel(e.target.value)}
-          style={{ marginRight: "20px", padding: "8px" }}
+          style={{ marginRight: "20px", fontSize: "0.8rem", fontWeight:"400", padding: "8px", width:"150px", height:"20px",borderRadius: "4px", cursor: "pointer"  }}
         />
         <input
           type="number"
-          placeholder="Nuovo valore (es: 25)"
+          placeholder="Tempo (es: 25min)"
           value={newValue}
           onChange={(e) => setNewValue(e.target.value)}
-          style={{ marginRight: "20px", padding: "8px" }}
+          style={{ marginRight: "20px", padding: "8px",  width:"150px", height:"20px", borderRadius: "4px", cursor: "pointer"}}
         />
-        <button onClick={handleAddData} style={{ padding: "5px 10px" }}>
+        <button onClick={handleAddData} style={{ padding: "10px",  fontSize:"1rem", fontWeight: "500" }}>
           Aggiungi Dati
         </button>
-        <button onClick={handleReset} style={{ padding: "5px 10px", marginLeft: "10px" }}>
+        <button onClick={handleReset} style={{ padding: "10px", marginLeft: "10px", fontSize:"1rem", fontWeight: "500" }}>
           Reset
         </button>
       </div>

@@ -3,11 +3,19 @@
 
 .fitness-dashboard {
     padding: 20px;
+
   }
   
+  .fitness-dashboard h1{
+    font-size: 2.5rem;
+    margin: 5px 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+  }
   header {
-    background-color: #555;
-    padding: 20px;
+
+    background-color: #302e2e;
+    padding: 40px;
     border-radius: 10px;
   }
   
@@ -30,11 +38,22 @@
   }
   
   .today-activity {
-    margin-top: 20px;
+    margin-top: 50px;
   }
+  .today-activity h2{
+    display: flex;
+    justify-content: center;
+    letter-spacing: 2px;
+    font-size: 2rem;
   
+  }
+  .add-activity {
+    padding: 15px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
   .activity-card {
-    background-color: #ffe0b2;
+    background-color:#c0f500;
     margin: 10px 0;
     padding: 15px;
     border-radius: 10px;
@@ -50,24 +69,57 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  
   }
   
   .modal-content {
     background: white;
-    padding: 20px;
+    padding: 50px;
     border-radius: 8px;
     width: 300px;
+    height: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+   gap: 15px;
+   flex-direction: column;
+  }
+  .modal-content h3{
+    font-size: 1.8rem;
+    margin-top: 0;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  .modal-content label{
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px; 
+  }
+  .modal-content input{
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin: 6px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    align-items: center;
     text-align: center;
   }
-  
   button {
-    margin-top: 10px;
-    padding: 8px;
+    margin-top: 20px;
+    padding: 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+    display: space-between ;
+    font-size: 0.9rem;
+    font-weight: 500;
   }
   
   button:hover {

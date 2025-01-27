@@ -1,60 +1,53 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import "./FitnessDashboard.css";
 import Chart from "./Chart";
+import { toPadding } from 'chart.js/helpers';
 
 const FitnessDashboard = () => {
-    // Stato per il nome dell'utente
-    const [name, setName] = useState('');
-  
-    // Funzione per gestire il cambiamento del nome
-    const handleNameChange = (e) => {
-      setName(e.target.value); // Aggiorna il nome quando l'utente scrive
-    };
-
- // Stato per la lista delle attività
- const [activities, setActivities] = useState([
+  const [name, setName] = useState('');
+  const [activities, setActivities] = useState([
     { name: 'Full Body Workout', duration: '20 min' },
     { name: 'Abs and Legs', duration: '30 min' },
   ]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [newActivity, setNewActivity] = useState({ name: '', duration: '' });
 
-     const [isModalOpen, setIsModalOpen] = useState(false);
-     const [NewActivity, setNewActivity] = useState({name:''});
-     const openModal = () => {setIsModalOpen(true);
-        console.log('modale aperta');
-     };
-     const closeModal = () => {
-        setIsModalOpen(false);
-        setNewActivity({name:'', duration: ''})
-        console.log('modale chiusa');
-     };
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
 
- // Funzione per gestire il cambiamento nei campi della modale
- const handleActivityChange = (e) => {
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setNewActivity({ name: '', duration: '' });
+  };
+
+  const handleActivityChange = (e) => {
     const { name, value } = e.target;
     setNewActivity((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
-
-  // Funzione per aggiungere una nuova attività
   const addActivity = () => {
-    if (newActivity.name && newActivity.duration) {
-    setActivities([...activities, newActivity]);
-    closeModal(); // Chiudi la modale dopo aver aggiunto l'attività
-} else {
-    alert('Please fill in all fields');
-  }
-};
+    console.log("New Activity:", newActivity);
+    if (newActivity.name.trim() && newActivity.duration.trim()) {
+      setActivities([...activities, newActivity]);
+      console.log("Activity added:", [...activities, newActivity]);
+      closeModal();
+    } else {
+      alert('Please fill in all fields');
+    }
+  };
 
-   return (
+  return (
     <div className="fitness-dashboard">
       <header>
-        <h1>
-          Welcome back!
-        </h1>
-        {/* Mostra il nome solo se è stato inserito */}
+        <h1>Welcome back!</h1>
         {name && <p>Welcome, {name}!</p>}
         <div className="stats">
           <div className="stat-card">
@@ -69,38 +62,33 @@ const FitnessDashboard = () => {
       </header>
       <section className="today-activity">
         <h2>TODAY'S ACTIVITIES</h2>
-       
         <button
-  className="add-activity"
-  onClick={(e) => {
-    e.preventDefault(); // Impedisce il comportamento di refresh della pagina
-    openModal();
-  }}
->
-  +
-</button>
-
-        {/* Mostra le attività */}
+          className="add-activity"
+          onClick={(e) => {
+            e.preventDefault();
+            openModal();
+          }}
+        >
+         ADD NEW ACTIVITY
+        </button>
         {activities.map((activity, index) => (
           <div key={index} className="activity-card">
             <p>{`${activity.name} - ${activity.duration}`}</p>
           </div>
         ))}
       </section>
-
-  {/* Modale per aggiungere una nuova attività */}
-  {isModalOpen && (
+      {isModalOpen && (
         <div className="modal">
           <div className="modal-content">
             <h3>Add New Activity</h3>
             <label>
-              Activity Name:
+              Activity:
               <input
                 type="text"
                 name="name"
                 value={newActivity.name}
                 onChange={handleActivityChange}
-                placeholder="Enter activity name"
+                placeholder="Es. upper body"
               />
             </label>
             <label>
@@ -110,7 +98,7 @@ const FitnessDashboard = () => {
                 name="duration"
                 value={newActivity.duration}
                 onChange={handleActivityChange}
-                placeholder="Enter duration"
+                placeholder="Es. 1h20min"
               />
             </label>
             <button onClick={addActivity}>Add Activity</button>
@@ -118,7 +106,7 @@ const FitnessDashboard = () => {
           </div>
         </div>
       )}
-       <Chart />
+      <Chart />
     </div>
   );
 };
