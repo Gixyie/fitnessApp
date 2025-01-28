@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./FitnessDashboard.css";
 import Chart from "./Chart";
-import { toPadding } from 'chart.js/helpers';
 
 const FitnessDashboard = () => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
   const [activities, setActivities] = useState([
-    { name: 'Full Body Workout', duration: '20 min' },
-    { name: 'Abs and Legs', duration: '30 min' },
+    { name: "Full Body Workout", duration: 20 },
+    { name: "Abs and Legs", duration: 30 },
   ]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [newActivity, setNewActivity] = useState({ name: '', duration: '' });
+  const [newActivity, setNewActivity] = useState({ name: "", duration: "" });
+  const [completedExercises, setCompletedExercises] = useState(0);
+
+  // Dati per il grafico
+  const labels = activities.map((_, index) => `Day ${index + 1}`);
+  const dataset = activities.map((activity) => activity.duration);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -22,7 +26,7 @@ const FitnessDashboard = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setNewActivity({ name: '', duration: '' });
+    setNewActivity({ name: "", duration: "" });
   };
 
   const handleActivityChange = (e) => {
@@ -34,13 +38,17 @@ const FitnessDashboard = () => {
   };
 
   const addActivity = () => {
-    console.log("New Activity:", newActivity);
     if (newActivity.name.trim() && newActivity.duration.trim()) {
-      setActivities([...activities, newActivity]);
-      console.log("Activity added:", [...activities, newActivity]);
+      const parsedDuration = parseInt(newActivity.duration, 10); // Converte la durata in numero
+      if (isNaN(parsedDuration)) {
+        alert("Inserisci una durata valida (in minuti).");
+        return;
+      }
+      setActivities([...activities, { name: newActivity.name, duration: parsedDuration }]);
+      setCompletedExercises((prev) => prev + 1);
       closeModal();
     } else {
-      alert('Please fill in all fields');
+      alert("Compila tutti i campi.");
     }
   };
 
@@ -52,7 +60,9 @@ const FitnessDashboard = () => {
         <div className="stats">
           <div className="stat-card">
             <h3>Completed Exercises</h3>
-            <p>2/4</p>
+            <p>
+              {completedExercises}/{activities.length}
+            </p>
           </div>
           <div className="stat-card">
             <h3>Steps</h3>
@@ -69,11 +79,11 @@ const FitnessDashboard = () => {
             openModal();
           }}
         >
-         ADD NEW ACTIVITY
+          ADD NEW ACTIVITY
         </button>
         {activities.map((activity, index) => (
           <div key={index} className="activity-card">
-            <p>{`${activity.name} - ${activity.duration}`}</p>
+            <p>{`${activity.name} - ${activity.duration} min`}</p>
           </div>
         ))}
       </section>
@@ -88,17 +98,17 @@ const FitnessDashboard = () => {
                 name="name"
                 value={newActivity.name}
                 onChange={handleActivityChange}
-                placeholder="Es. upper body"
+                placeholder="Es. Upper Body"
               />
             </label>
             <label>
-              Duration:
+              Duration (in minutes):
               <input
-                type="text"
+                type="number"
                 name="duration"
                 value={newActivity.duration}
                 onChange={handleActivityChange}
-                placeholder="Es. 1h20min"
+                placeholder="Es. 20"
               />
             </label>
             <button onClick={addActivity}>Add Activity</button>
@@ -106,7 +116,8 @@ const FitnessDashboard = () => {
           </div>
         </div>
       )}
-      <Chart />
+      {/* Passa labels e dataset al grafico */}
+      <Chart labels={labels} dataset={dataset} />
     </div>
   );
 };
