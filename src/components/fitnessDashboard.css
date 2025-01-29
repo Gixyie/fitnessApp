@@ -3,20 +3,35 @@
 
 .fitness-dashboard {
     padding: 20px;
+    display: space-between;
 
+  }
+  .fitness-dashboard header{
+
+    
   }
   
   .fitness-dashboard h1{
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     margin: 5px 10px;
-    font-weight: 800;
+    font-weight: 550;
     letter-spacing: 3px;
   }
   header {
-
-    background-color: #302e2e;
     padding: 40px;
-    border-radius: 10px;
+    
+  border-radius: 10px;
+  }
+  .avatar{
+    display: flex;
+  }
+  .avatar img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #000;
+
   }
   
   .stats {
@@ -28,15 +43,25 @@
   .stat-card {
     flex: 1;
     margin: 10px;
-    background-color:#C9F500;
+    background-color: #d9f635;
     padding: 15px;
     border-radius: 10px;
     text-align: center;
-    font-weight: 500;
-    font-size: 1.1rem;
-
+    font-weight: 400;
+    font-size: 1rem;
+   
   }
-  
+  .stat-card h3{
+    text-align: center;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+  }
+  .stat-card p{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 10px;
+  }
   .today-activity {
     margin-top: 50px;
   }
@@ -53,10 +78,13 @@
     font-weight: 600;
   }
   .activity-card {
-    background-color:#c0f500;
+    background-color:#d9f635;
     margin: 10px 0;
     padding: 15px;
     border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .modal {

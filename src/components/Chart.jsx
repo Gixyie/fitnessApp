@@ -23,8 +23,8 @@ const Chart = ({ labels, dataset }) => {
       {
         label: "Minuti di allenamento",
         data: dataset || [], // Se dataset è undefined, usa un array vuoto
-        borderColor: "rgba(75, 192, 192, 1)",
-        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: "#c0f500;",
+        backgroundColor: "#c0f500",
         borderWidth: 2,
         tension: 0.4,
       },
@@ -48,6 +48,7 @@ const Chart = ({ labels, dataset }) => {
       },
     },
   };
+  
 
   return (
     <div>
