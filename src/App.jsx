@@ -1,15 +1,18 @@
 import React from 'react'
 import "./App.css";
 import FitnessDashboard from './components/fitnessDashboard.JSX';
+import Profile from "./components/Profile.jsx";
 
 function App() {
   const [currentPage, setCurrentPage] = React.useState("dashboard");
+
+ 
 
   return (
     <div className="app">
       <main>
         {currentPage === "dashboard" && <FitnessDashboard />}
-        {currentPage === "profile" && <UserProfile />}
+        {currentPage === "profile" && <Profile />}
         {currentPage === "progress" && <ProgressPage />}
       </main>
       <nav>

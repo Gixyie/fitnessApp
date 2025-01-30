@@ -89,10 +89,10 @@ const FitnessDashboard = () => {
     <div className="fitness-dashboard">
       <header>
        <div className="avatar">
-        <img></img>
+        <img src="https://img.freepik.com/foto-gratuito/ritratto-di-una-bella-giovane-donna-d-affari-rendering-3d_1142-51666.jpg?t=st=1738248321~exp=1738251921~hmac=2f00725518099594185385c32c753acf0216afa29ba041dd499dd2b6d9db1533&w=740"></img>
         <h1>Welcome back!</h1>
         </div>
-        
+
         {name && <p>Welcome, {name}!</p>}
         <div className="stats">
           <div className="stat-card">
