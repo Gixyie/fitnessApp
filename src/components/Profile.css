@@ -11,6 +11,7 @@ flex-direction: column;
     display: flex;
     justify-content: center;
   }
+
   .avatar1 img{
   width: 150px;
   height: 150px;
@@ -19,7 +20,12 @@ flex-direction: column;
   border: 1px  #000;
 
   }
-
+  .nameheader h1{
+ font-size: 2rem;
+ font-weight: 700;
+ letter-spacing: 2px;
+ margin: 0;
+  }
 .weight{
    display: flex;
    flex-direction: column;
@@ -93,7 +99,7 @@ flex-direction: column;
   .profile-button {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: left;
     background-color: #f1f1f1;
     border: none;
     padding: 10px 15px;
@@ -112,5 +118,35 @@ flex-direction: column;
   
   .profile-button svg {
     margin-right: 10px;
+    
   }
   
+  .profile-button .icon2 {
+   margin-left: auto;
+  }
+
+.logweight{
+    width: 100%;
+    max-width: 400px;
+}
+
+  .log-weight {
+   color: #fff; /* Rende il pulsante trasparente */
+    border: 2px solid #333;  /* Aggiunge un bordo scuro */
+    background-color: #333;  /* Cambia il colore del testo */
+    font-size: 1.2rem;  /* Ingrandisce la scritta */
+    font-weight: 400;
+    padding: 13px 100px;  /* Aggiunge spazio attorno al testo */
+    border-radius: 30px;  /* Smussa gli angoli */
+    cursor: pointer;  /* Cambia il cursore al passaggio */
+    transition: all 0.3s ease;  /* Aggiunge un effetto di transizione */
+width: 100%;
+max-width: 400px;
+}
+
+/* Effetto hover per migliorare l'interazione */
+.log-weight:hover {
+    background-color: transparent;
+    color: #000;
+    font-weight: 500;
+}
