@@ -47,6 +47,8 @@ const Chart = ({ labels, dataset }) => {
         beginAtZero: true,
       },
     },
+  
+    
   };
   
 

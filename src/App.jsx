@@ -2,6 +2,8 @@ import React from 'react'
 import "./App.css";
 import FitnessDashboard from './components/fitnessDashboard.JSX';
 import Profile from "./components/Profile.jsx";
+import Progress from "./components/Progress.jsx";
+
 
 function App() {
   const [currentPage, setCurrentPage] = React.useState("dashboard");
@@ -13,7 +15,7 @@ function App() {
       <main>
         {currentPage === "dashboard" && <FitnessDashboard />}
         {currentPage === "profile" && <Profile />}
-        {currentPage === "progress" && <ProgressPage />}
+        {currentPage === "progress" && <Progress />}
       </main>
       <nav>
         <button  onClick={() => setCurrentPage("dashboard")}>Dashboard</button>

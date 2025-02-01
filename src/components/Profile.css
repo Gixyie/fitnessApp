@@ -8,16 +8,27 @@ flex-direction: column;
 }
 
 .avatar1{
-    display: flex;
-    justify-content: center;
+   justify-content: space-between;
+   display: flex;
+align-items: center;
+    width: 100%;
+  
+    
   }
 
+  .avatar1 svg{
+    flex: 0 0 auto; /* Impedisce che si ridimensioni */
+    cursor: pointer;
+    font-size: 10px;
+    top: 20px;
+  }
   .avatar1 img{
   width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
   border: 1px  #000;
+  margin: 0 auto;
 
   }
   .nameheader h1{
