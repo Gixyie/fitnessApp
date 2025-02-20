@@ -4,6 +4,9 @@
 .fitness-dashboard {
     padding: 20px;
     display: space-between;
+    flex-direction: column;
+    align-items: center;
+    
 
   }
   .fitness-dashboard header{
@@ -16,10 +19,12 @@
     margin: 5px 10px;
     font-weight: 700;
     letter-spacing: 2px;
+    text-align: center;
   }
   header {
-    padding: 40px;
-    
+    padding: 20px;
+    width: 90%;
+    max-width: 1000px;
   border-radius: 10px;
   }
   .avatar{
@@ -154,3 +159,64 @@
     background-color: #45a049;
   }
   
+  @media (max-width: 768px) {
+    .fitness-dashboard h1 {
+        font-size: 1.8rem;
+    }
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    .stat-card {
+        width: 90%;
+    }
+    .activity-card {
+        width: 90%;
+    }
+}
+@media (max-width: 1024px) {
+  .fitness-dashboard h1 {
+      font-size: 2rem;
+  }
+  .stats {
+      justify-content: center;
+      max-width: 90%;
+      flex-wrap: wrap;
+  }
+  .stat-card {
+      min-width: 200px;
+      max-width: 220px;
+  }
+  .activity-card {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .fitness-dashboard {
+      padding: 10px;
+  }
+  .fitness-dashboard h1 {
+      font-size: 1.5rem;
+  }
+  header {
+      padding: 10px;
+  }
+  .stat-card {
+      min-width: 100px;
+      font-size: 0.9rem;
+  }
+  .today-activity h2 {
+      font-size: 1.5rem;
+  }
+  .modal-content {
+      padding: 20px;
+      width: 95%;
+  }
+  button {
+      font-size: 0.8rem;
+      padding: 8px;
+  }
+}
