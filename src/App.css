@@ -39,9 +39,9 @@ nav button {
 
 nav button:hover {
   color: #000;
-  background-color:  #C9F500;
+  background-color:  #1b4bea;
   border-radius: 10px;
   margin-bottom: 5px;
 }
 
-@import './styles/tailwind.css';
+

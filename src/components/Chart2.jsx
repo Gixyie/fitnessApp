@@ -29,15 +29,46 @@ const activities = [
       {
         label: "Weight",
         data: activities.map((activity) => activity.value),
-        borderColor: "rgba(290,280,20)",
-        backgroundColor: "rgba(1, 13, 13)",
+        borderColor: "#1b4bea",
+        backgroundColor: "#1b4bea",
       },
     ],
   };
   
+  // Opzioni per rendere il grafico responsivo
+const options = {
+  responsive: true,
+  maintainAspectRatio: false, // Permette al grafico di adattarsi al contenitore
+  plugins: {
+    legend: {
+      display: true,
+      position: "top",
+    },
+  },
+  scales: {
+    x: {
+      ticks: {
+        font: {
+          size: window.innerWidth < 600 ? 10 : 14, // Dimensione del testo per mobile
+        },
+      },
+    },
+    y: {
+      ticks: {
+        font: {
+          size: window.innerWidth < 600 ? 10 : 14, // Adatta la grandezza delle etichette
+        },
+      },
+    },
+  },
+}; 
   // Componente Chart2
   const Chart2 = () => {
-    return <Line data={data} />;
+    return (
+      <div style={{ width: "100%", maxWidth: "800px", height: "400px", margin: "auto" }}>
+        <Line data={data} options={options} />
+      </div>
+    );
   };
   
   export default Chart2;

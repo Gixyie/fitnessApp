@@ -4,7 +4,9 @@
 flex-direction: column;
     align-items: center;
     gap: 20px;
-    margin: 50px;
+    margin: auto;
+    padding: 20px;
+    max-width: 500px;
 }
 
 .avatar1{
@@ -12,6 +14,7 @@ flex-direction: column;
    display: flex;
 align-items: center;
     width: 100%;
+    position: relative;
   
     
   }
@@ -160,4 +163,47 @@ max-width: 400px;
     background-color: transparent;
     color: #000;
     font-weight: 500;
+}
+
+/* Media Query per dispositivi piccoli */
+@media (max-width: 768px) {
+  .profile-container {
+      max-width: 90%;
+      padding: 10px;
+  }
+
+  .avatar1 img {
+      width: 100px;
+      height: 100px;
+  }
+
+  .weight {
+      padding: 15px;
+  }
+
+  .profile-button {
+      font-size: 14px;
+      padding: 8px;
+  }
+}
+
+/* Media Query per schermi molto piccoli (smartphone) */
+@media (max-width: 480px) {
+  .avatar1 img {
+      width: 80px;
+      height: 80px;
+  }
+
+  .nameheader h1 {
+      font-size: 20px;
+  }
+
+  .weight {
+      padding: 10px;
+  }
+
+  .profile-button {
+      font-size: 12px;
+      padding: 6px;
+  }
 }

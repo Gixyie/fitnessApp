@@ -6,12 +6,12 @@
     display: space-between;
     flex-direction: column;
     align-items: center;
-    
+ width: 90%;
+text-align: center;
 
   }
   .fitness-dashboard header{
 
-    
   }
   
   .fitness-dashboard h1{
@@ -48,12 +48,13 @@
   .stat-card {
     flex: 1;
     margin: 10px;
-    background-color: #d9f635;
+    background-color: #1b4bea;
     padding: 15px;
     border-radius: 10px;
     text-align: center;
     font-weight: 700;
     font-size: 1rem;
+   
    
   }
   .stat-card h3{
@@ -81,15 +82,25 @@
     padding: 15px 20px;
     font-size: 0.9rem;
     font-weight: 600;
+    justify-content: center;
+    display: flex;
   }
   .activity-card {
-    background-color:#d9f635;
+    background-color:#1b4bea;
     margin: 10px 0;
     padding: 15px;
     border-radius: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+width: 100%;
+    text-align: center;
+    display: flex;
+    
+
+  }
+  .activity-card p{
+    text-align: center;
   }
   
   .modal {

@@ -14,7 +14,7 @@ function App() {
     <div className="app">
       <main>
         {currentPage === "dashboard" && <FitnessDashboard />}
-        {currentPage === "profile" && <Profile />}
+        {currentPage === "profile" &&  <Profile setCurrentPage={setCurrentPage}  />}
         {currentPage === "progress" && <Progress />}
       </main>
       <nav>
